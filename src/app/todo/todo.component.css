@@ -1,0 +1,15 @@
+.box:hover {
+    min-width: 15px;
+    min-height: 610;
+    transition: 1s ease-out;
+    border: 2px solid white !important;
+}
+
+.bottom {
+    position: relative;
+    bottom: -100px;
+}
+
+.cursor {
+    cursor: pointer !important;
+}

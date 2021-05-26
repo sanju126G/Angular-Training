@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg m-2 border border-dark rounded-3 sticky-lg-top navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="nav-link material-icons" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            reorder
+          </a>
+        <div class="dropdown-menu bg-light shadow border border-dark rounded-3 mt-3 gray-gradient" style="min-height: 600px; min-width: 250px;" aria-labelledby="navbarDropdown">
+            <ul class="list-unstyled align-content-center justify-content-center mt-4 p-2 mt-3">
+                <li><a class="dropdown-item mt-4 border text-center rounded border-dark material-icons" routerLink="/recipe">home HOME</a></li>
+                <li><a class="dropdown-item mt-4 border text-center rounded border-dark material-icons" routerLink="/food">fastfood FOOD</a></li>
+                <li><a class="dropdown-item mt-4 border text-center rounded border-dark material-icons" aria-current="page" routerLink="food-recipe">menu_book RECIPE</a></li>
+            </ul>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link hover active" aria-current="page" routerLink="recipe-app">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Contact Us</a>
+                </li>
+
+            </ul>
+            <form class="d-flex">
+                <img src="https://dcassetcdn.com/design_img/10150/16906/16906_294291_10150_image.jpg" height="40px" width="150px" alt="Recipe Logo">
+            </form>
+
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+
+</div>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,31 @@
+<div class="row mt-lg-5 justify-content-center text-light align-items-center">
+    <div class="col-md-4 mt-4">
+        <div class="container p-3 border border-bottom bg-gradient">
+            <form #form="ngForm" class="text-light">
+                <div class="form-group">
+                    <label for="name">User Name</label>
+                    <input type="text" class="form-control" ngModel #name="ngModel" name="name" id="name" required minlength="5" pattern="[a-z,A-Z,0-9]{5,15}" placeholder="Enter User Name" [ngClass]="{ 'is-invalid': form.submitted && name.invalid }">
+                    <div class="alert alert-danger" *ngIf="name.errors && name.touched">
+                        <div *ngIf="name.errors.required">This Field is Required </div>
+                        <div *ngIf="name.errors.minlength">Name should have minimum of {{name.errors.minlength.requiredLength}} Characters </div>
+                        <div *ngIf="name.errors.pattern"> Entered Name does not match the pattern required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" ngModel #password="ngModel" name="password" id="password" required minlength="8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Enter Your Password">
+                    <div class="alert alert-danger" *ngIf="password.errors && password.touched">
+                        <div *ngIf="password.errors.required">This Field is Required </div>
+                        <div *ngIf="password.errors.minlength">password should have minimum of {{password.errors.minlength.requiredLength}} Characters </div>
+                        <div *ngIf="password.errors.pattern"> Entered password should have at least one number and one uppercase and lowercase letter, and at least 8 or more characters</div>
+                    </div>
+                </div>
+                <div class="text-end">
+                    <button type="button" [disabled]="form.invalid" class="btn btn-outline-success mb-3 mt-3"><a class="text-decoration-none text-light" aria-current="page" routerLink="/to-do"> Log-In</a></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<router-outlet></router-outlet>

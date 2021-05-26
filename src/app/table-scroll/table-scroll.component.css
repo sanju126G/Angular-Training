@@ -1,0 +1,13 @@
+.border {
+    border-radius: 20px;
+}
+
+.active {
+    background-color: black;
+    color: white;
+}
+
+.sticky {
+    position: sticky;
+    left: auto;
+}

@@ -1,0 +1,153 @@
+<div class="container bg-secondary mt-4 p-4 text-light">
+    <div class="container">
+        <form class="example-form">
+            <mat-form-field class="example-full-width">
+                <mat-label class="fw-bolder text-light">Name</mat-label>
+                <input type="text" placeholder="Pick one" aria-label="Number" [(ngModel)]="value" matInput [formControl]="myControl" [matAutocomplete]="auto">
+                <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                    <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                        {{option}}
+                    </mat-option>
+                </mat-autocomplete>
+            </mat-form-field>
+        </form>
+    </div>
+
+    <!-- this below block is using Mat Inputs -->
+
+    <div class="container p-3" *ngIf="value">
+        <form class="example-form">
+            <div *ngFor="let detail of details">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div *ngIf="value == detail.name">
+                            <mat-form-field class="example-full-width">
+                                <mat-label class="text-light">Contact Number</mat-label>
+                                <input matInput placeholder="123456789.." readonly type="number" value="{{detail.mobileNo}}">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div *ngIf="value == detail.name">
+                            <mat-form-field class="example-full-width">
+                                <mat-label class="text-light">Email</mat-label>
+                                <input matInput placeholder="example@gmail.com" readonly type="email" value="{{detail.email}}">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div *ngIf="value == detail.name">
+                            <mat-form-field class="example-full-width">
+                                <mat-label class="text-light">Place</mat-label>
+                                <input matInput placeholder="Address" type="text" readonly value="{{detail.place}}">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<!--this below code is for mat-Cards And to take details From User-->
+<div class="container row">
+    <div class="col-md-4 mt-4">
+        <form [formGroup]="empForm" class="margin">
+
+            <div formArrayName="employees" class="emps">
+                <div *ngFor="let employee of employees().controls; let i=index">
+                    <form class="example-form max-width" #addProductForm="ngForm" (ngSubmit)="onsubmit(addProductForm)">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body ml-3 design">
+                                <!-- <button (click)="remove(i)" class="float-end">X</button> -->
+                                <mat-form-field class="example-full-width">
+                                    <mat-label><b>Trainer Name</b></mat-label>
+                                    <input type="text" matInput class="form-conrol" id="name" name="name" ngModel #name="ngModel">
+                                    <mat-autocomplete #auto="matAutocomplete">
+                                    </mat-autocomplete>
+                                </mat-form-field> <br>
+
+                                <mat-form-field class="example-full-width">
+                                    <mat-label><b>Mobile</b></mat-label>
+                                    <input type="text" matInput class="form-conrol" id="mobileNo" name="mobileNo" ngModel #mobileNo="ngModel">
+                                    <mat-autocomplete #auto="matAutocomplete">
+                                    </mat-autocomplete>
+                                </mat-form-field> <br>
+
+                                <mat-form-field class="example-full-width">
+                                    <mat-label><b>Email</b></mat-label>
+                                    <input type="text" matInput class="form-conrol" id="email" name="email" ngModel #email="ngModel">
+                                    <mat-autocomplete #auto="matAutocomplete">
+                                    </mat-autocomplete>
+                                </mat-form-field> <br>
+
+                                <mat-form-field class="example-full-width">
+                                    <mat-label><b>Place</b></mat-label>
+                                    <input type="text" matInput class="form-conrol" id="place" name="place" ngModel #place="ngModel">
+                                    <mat-autocomplete #auto="matAutocomplete">
+                                    </mat-autocomplete>
+                                </mat-form-field>
+
+                                <button type="submit" class="btn btn-info">Add Trainer</button>
+                                <button class="btn btn-primary mx-1 px-5" (click)="addEmployee()">Add</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </form>
+        <p class="mt-4">
+            <button type="button" class="btn col-md-4 btn-warning" (click)="addEmployee()">Add details</button>
+        </p>
+    </div>
+</div>
+
+
+
+
+
+
+
+<!-- UnWanted Code -->
+<!--form using normal input Fields-->
+
+<!-- <div class="container" id="centerform" *ngIf="name">
+    <form>
+        <div [ngSwitch]="name">
+            <div *ngSwitchCase="'sanjay'">
+                <label for="mobileNo">Mobile Number</label>
+                <input type="number" id="mobileNo" name="mobileNo" value="{{sanjay.mobileNo}}" readonly>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" value="{{sanjay.email}}" readonly>
+                <label for="place">Place</label>
+                <input type="text" id="place" name="place" value="{{sanjay.place}}" readonly>
+            </div>
+            <div *ngSwitchCase="'satheesh'">
+                <label for="mobileNo">Mobile Number</label>
+                <input type="number" id="mobileNo" name="mobileNo" value="{{satheesh.mobileNo}}" readonly><br><br>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" value="{{satheesh.email}}" readonly><br><br>
+                <label for="place">Place</label>
+                <input type="text" id="place" name="place" value="{{satheesh.place}}" readonly><br><br>
+            </div>
+            <div *ngSwitchCase="'abbas'">
+                <label for="mobileNo">Mobile Number</label>
+                <input type="number" id="mobileNo" name="mobileNo" value="{{abbas.mobileNo}}" readonly><br><br>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" value="{{abbas.email}}" readonly><br><br>
+                <label for="place">Place</label>
+                <input type="text" id="place" name="place" value="{{abbas.place}}" readonly><br><br>
+            </div>
+            <div *ngSwitchCase="'dharini'">
+                <label for="mobileNo">Mobile Number</label>
+                <input type="number" id="mobileNo" name="mobileNo" value="{{dharini.mobileNo}}" readonly><br><br>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" value="{{dharini.email}}" readonly><br><br>
+                <label for="place">Place</label>
+                <input type="text" id="place" name="place" value="{{dharini .place}}" readonly><br><br>
+            </div>
+        </div>
+    </form>
+</div> -->

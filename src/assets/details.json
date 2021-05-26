@@ -1,0 +1,22 @@
+{
+    "details": [{
+            "email": "sanjay@gmail.com",
+            "mobileNo": 1234567890,
+            "name": "sanjay",
+            "place": "Mandya"
+        },
+        {
+            "email": "satheesh@gmail.com",
+            "mobileNo": 1234567891,
+            "name": "satheesh",
+            "place": "Hubli"
+        },
+        {
+            "email": "abbas@gmail.com",
+            "mobileNo": 1234567892,
+            "name": "abbas",
+            "place": "Tumkur"
+        }
+    ]
+
+}

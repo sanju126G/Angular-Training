@@ -1,0 +1,65 @@
+<!-- <div class="row">
+    <div class="col-md-4 offset-md-4 mt-4">
+        <form #addDetailsForm="ngForm" (ngSubmit)="onFromSubmit(addDetailsForm)">
+            <div class="form-group" formArrayName="person">
+                <label for="Users"></label>
+                <div *ngFor="let control of addDetailsForm.controls.person['controls'];let i=index">
+                    <input type="text" [formControlName]="i">
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div> -->
+
+<!-- <div class="row">
+    <div class="col-md-4 offset-md-4 mt-4">
+        <form action="" #addDetailsForm="ngForm">
+            <div [formGroup]="myGroup">
+                <div formArrayName="details">
+                    <label for="Details">Details</label>
+                    <div *ngFor="let detail of detailsArray.controls; index as i">
+                        <input [formControlName]="i"><br>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div> -->
+
+<!-- <div class="form-row" *ngFor="let emp of empArray;let i=index">
+    <div class="employee-form col-4">
+        <span class="btn text-dark fw-bold cross" *ngIf="i!==0" (click)="remove(i)">X</span>
+        <form class="example-form" #employeeform="ngForm">
+            <legend class="text-center fw-bold mb-4">Add Details</legend>
+            <mat-form-field class="example-full-width">
+                <mat-label>Name</mat-label>
+                <input type="text" placeholder="Enter your Name" aria-label="text" [(ngModel)]="emp.ename" matInput name="ename{{i}}" #ename="ngModel" ngModel id="ename">
+                <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                </mat-autocomplete>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Email Id</mat-label>
+                <input type="email" placeholder="enter your email id" aria-label="text" [(ngModel)]="emp.email" matInput name="email{{i}}" #email="ngModel" ngModel id="email">
+                <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                </mat-autocomplete>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Mobile No</mat-label>
+                <input type="number" placeholder="enter your contact number" aria-label="text" [(ngModel)]="emp.contact" matInput name="number{{i}}" #number="ngModel" ngModel id="number">
+                <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                </mat-autocomplete>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Place</mat-label>
+                <input type="text" placeholder="enter your place" aria-label="text" [(ngModel)]="emp.place" matInput name="place{{i}}" #place="ngModel" ngModel id="place">
+                <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                </mat-autocomplete>
+            </mat-form-field>
+            <div class="btns">
+                <button type="submit" mat-raised-button color="secondary">Add Detail</button>
+                <button mat-raised-button color="Secondary" (click)="addForm()" class="add">New Card</button>
+            </div>
+        </form>
+    </div>
+</div> -->
