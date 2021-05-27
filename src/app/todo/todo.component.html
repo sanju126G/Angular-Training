@@ -46,6 +46,11 @@
                         </span>
                     </li><br>
                 </ul>
+                <div class="text-end mt-2">
+                    <button class="btn btn-outline-warning" (click)="addNewTask(obj.id)" data-bs-toggle="modal" data-bs-target="#addModal"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+                      </svg></button>
+                </div>
             </div>
         </div>
     </div>
@@ -83,6 +88,28 @@
     </div>
 </div>
 
+<div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content bg-secondary">
+            <div class="modal-header">
+                <h5 class="modal-title fw-bolder text-light" id="addModalLabel">Add New Task</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mx-2">
+                    <form #updateForm="ngForm" (ngSubmit)="onsubmitAdd()">
+                        <input type="text" [(ngModel)]="newTask" name="newTask" class="form-control" placeholder="Enter New Task">
+
+                        <div class="text-end mt-2"><button type="submit" class="btn btn-primary">Add New Task</button></div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+
+            </div>
+        </div>
+    </div>
+</div>
 <!-- This Are Some Extra Code Used To Understand WorkFlow of arrays and Objects -->
 
 <!-- <div class="row">

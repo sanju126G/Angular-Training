@@ -9,18 +9,18 @@ export class TodoService {
 
   constructor(private http:HttpClient) { }
 
-  dbUrl = 'http://localhost:3000/todos';
+  dbUrl = 'http://localhost:3100/todos';
 
   getToDos(){
     return this.http.get(this.dbUrl);
 }
   
   getToDo(date){
-    return this.http.get('http://localhost:3000/todos?date=' + date)
+    return this.http.get('http://localhost:3100/todos?date=' + date)
   }
 
   addToDos(newObject){
-    return this.http.post('http://localhost:3000/todos/',newObject)
+    return this.http.post('http://localhost:3100/todos/',newObject)
   }
 
   deleteTODo(id){

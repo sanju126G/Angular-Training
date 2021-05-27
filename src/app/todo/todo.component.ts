@@ -103,10 +103,15 @@ export class TodoComponent implements OnInit {
     for( let obj in altData){
       console.log(altData[obj].tasks[index]);
       altData[obj].tasks.splice(index,1);
-      console.log(altData);
     }
     console.log(altData);
-    this.ds.updateTasks(id,altData).subscribe((res) => {
+    let newData = new Object();
+    newData = altData[0];
+    console.log('below is the output for converting array into object');
+    
+    console.log(newData);
+    
+    this.ds.updateTasks(id,newData).subscribe((res) => {
     })
     // console.log(altData.date);
   }
@@ -139,8 +144,37 @@ export class TodoComponent implements OnInit {
       updateTask[obj].tasks.splice(this.index,1,this.updateSelect);
       console.log(updateTask);
     }
-    // this.ds.updateTasks(this.id,updateTask).subscribe((res) => {})
+    let newData = new Object();
+    newData = updateTask[0];
+    console.log('below is the output for converting array into object');
     
+    console.log(newData);
+    // console.log(updateTask);
+    
+    this.ds.updateTasks(this.id,newData).subscribe((res) => {})
+    
+  }
+
+  addNewTask(id){
+    this.id =id;
+    
+  }
+
+
+  newTask;
+  onsubmitAdd(){
+    let altData = this.temp;
+    for( let obj in altData){
+      console.log(altData[obj].tasks[this.index]);
+      altData[obj].tasks.push(this.newTask)
+      console.log(altData);
+    }
+    let newData = new Object();
+    newData = altData[0];
+    console.log('below is the output for converting array into object');
+    
+    console.log(newData);
+    this.ds.updateTasks(this.id,newData).subscribe((res) => {})
   }
 
 
