@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg navbar-secondary  bg-secondary">
+    <div class="container-fluid">
+        <a class="navbar-brand text-light fw-bolder" href="#">Movie Search</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <form class="navbar-nav mx-auto mb-2 text-center mb-lg-0">
+                <input class="form-control me-2" type="search" [(ngModel)]="mName" name="mName" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-secondary text-secondary" (click)="onClickSearch()" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+<!-- <div class="bg-warning text-center" *ngIf="error">
+    {{error}}
+</div>
+<div class="bg-warning text-center" *ngIf="valid">
+    <h1>Found total of {{totalResult}} Movies </h1>
+</div>
+<div class="bg-warning text-center" *ngIf="!valid">
+    <h1>No Movies Found </h1>
+</div> -->
+
+<div class=" mt-2 row">
+    <div class="col-md-3" *ngFor="let movie of search">
+        <div class="card border border-dark mx-auto mt-2" style="width: 15rem;">
+            <a href="https://www.google.com/search?q= + {{movie.Title}}"><img [src]="movie.Poster" height="200px" width="200px" class="card-img-top" [alt]="movie.Title"></a>
+            <div class="card-body bg-dark text-light">
+                <h5 class="card-title fs-4">{{movie.Title}}</h5>
+            </div>
+        </div>
+    </div>
+</div>
