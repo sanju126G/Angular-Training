@@ -57,6 +57,7 @@ export class AddressSearchComponent implements OnInit {
       console.log(this.error);
       
     })
+    
   }
 
   onChoseLocation(event) {
