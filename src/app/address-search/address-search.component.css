@@ -1,0 +1,12 @@
+.bg-light-white {
+    background-color: aliceblue;
+}
+
+.hover:hover {
+    margin: 0px !important;
+}
+
+agm-map {
+    height: 400px;
+    width: 400px;
+}

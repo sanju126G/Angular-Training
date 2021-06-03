@@ -1,0 +1,31 @@
+<div class="row mt-3 mb-2">
+    <form class="d-flex col-md-4 offset-md-4">
+        <label for="pCode" class="fw-bolder mt-auto me-auto fs-6 mb-auto text-light">PostalCode: </label>
+        <input class="form-control" type="search" name="pCode" id="pCode" [(ngModel)]="pCode">
+        <button type="submit" class="material-icons btn btn-outline-light mx-1 fw-bolder" (click)="onSearch()">search</button>
+    </form>
+</div>
+
+<div class="row me-auto mx-auto mt-auto mb-auto">
+    <!-- <div class="col-md-6 m-auto" *ngIf="selectedCode">
+        <h1 class="text-warning text-center text-light m-auto">Postal Code You are searching for Is not correct or not exist</h1>
+    </div>   -->
+    <div class="card col-md-4 bg-secondary hover text-light m-1 border border-white border-1 rounded-start shadow gray-gradient" style="width: 18rem;" *ngFor="let post of postal">
+        <div class="card-body ">
+            <h2 class="card-title text-info">{{post.postalLocation | uppercase}}</h2>
+            <h3 class="card-title">Postal-Code : {{post.postalCode}}</h3>
+            <h3 class="card-title">Postal-District : {{post.district}}</h3>
+            <h3 class="card-title">Postal-Province : {{post.province}}</h3>
+            <h3 class="card-title">Postal-State : {{post.state}}</h3>
+            <a href="https://www.google.co.in/maps/place/ + {{post.postalLocation}}/ + {{post.province}} / + {{post.district}} "> <button class="btn btn-outline-warning">Locate On Maps</button></a>
+            <!-- <button class="btn btn-outline-warning" (click)="onClick(post.postalCode,post.latitude,post.longitude)">Locate On Maps</button> -->
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-5 offset-md-3 mb-2 mt-2">
+        <agm-map [latitude]="latitude" [longitude]="longitude" (mapClick)="onChoseLocation($event)">
+            <agm-marker [latitude]="latitude" [longitude]="longitude" *ngIf="locationChosen"></agm-marker>
+        </agm-map>
+    </div>
+</div>
