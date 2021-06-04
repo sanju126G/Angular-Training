@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   postalUrl:'https://api.worldpostallocations.com/pincode?countrycode=IN&postalcode=',
-  nearByUrl:'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=1500&type=restaurant&keyword=cruise&key=AIzaSyDhqn21OskbwPFzwKEid2Tfo0flkWTOMWg'
+  nearByUrl:'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=1500&type=restaurant&keyword=cruise&key=YourGoggleKeyHere'
 };
 
 /*
