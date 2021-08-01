@@ -7,13 +7,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mock.component.css']
 })
 export class MockComponent implements OnInit {
+  isValid=true;
+  color;
+  background = 'black'
 
+  names = ['sanju','satheesh','abbas','dharini']
+  selectedValue;
   constructor() { }
 
   ngOnInit(): void {
   }
 
   onclick(){
+
+    this.isValid = !this.isValid;
+
+
+
+
+
 
     //ForEach Loop; Only Used To Iterate Arrays; does not work with Objects;
     // let array = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];

@@ -1,0 +1,6 @@
+<form #addForm="ngForm" (ngSubmit)="addUser(addForm)">
+    <input type="number" required name="userId" id="userId" ngModel>
+    <input type="text" required name="title" id="title" ngModel>
+    <input type="text" required name="body" id="body" ngModel>
+    <button type="submit">Submit</button>
+</form>

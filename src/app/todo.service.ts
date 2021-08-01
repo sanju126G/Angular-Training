@@ -15,6 +15,9 @@ export class TodoService {
     return this.http.get(this.dbUrl);
 }
   
+  getData(data){
+    return this.http.post('https://jsonplaceholder.typicode.com/posts',data)
+  }
   getToDo(date){
     return this.http.get('http://localhost:3100/todos?date=' + date)
   }

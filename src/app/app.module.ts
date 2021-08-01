@@ -23,6 +23,12 @@ import { LoginComponent } from './login/login.component';
 import { RecipeAppComponent } from './recipe-app/recipe-app.component';
 import { FoodComponent } from './food/food.component';
 import { FoodRecipesComponent } from './food-recipes/food-recipes.component';
+import { CustomDirective } from './custom.directive';
+import { NewDirDirective } from './new-dir.directive';
+import { ChildComponent } from './child/child.component';
+import { ParentComponent } from './parent/parent.component';
+import { InnerComponent } from './inner/inner.component';
+import { OuterComponent } from './outer/outer.component';
 
 
 @NgModule({
@@ -37,7 +43,13 @@ import { FoodRecipesComponent } from './food-recipes/food-recipes.component';
     LoginComponent,
     RecipeAppComponent,
     FoodComponent,
-    FoodRecipesComponent
+    FoodRecipesComponent,
+    CustomDirective,
+    NewDirDirective,
+    ChildComponent,
+    ParentComponent,
+    InnerComponent,
+    OuterComponent
   ],
   imports: [
     BrowserModule,

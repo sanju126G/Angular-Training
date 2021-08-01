@@ -1,4 +1,79 @@
 <div class="text-center">
     <p class="text-center fw-bolder mt-4">mock works!</p>
-    <button class="btn btn-light btn-outline-dark" (click)="onclick()">Click this button to see Output In console</button>
+    <button class="btn btn-light btn-outline-dark" (click)="onclick()">Button</button>
 </div>
+
+<!--
+    * Directives In Angular 
+
+        -> Directives are classes that add additional behavior to elements in your Angular applications.
+        -> Angular suports three types of Directives.
+            1.Component Directive.
+                -> directives with a template. This type of directive is the most common directive type.
+            2.Attribut Directives.
+                -> directives that change the appearance or behavior of an element, component, or another directive.
+                -> Many NgModules such as the RouterModule and the FormsModule define their own attribute directives. 
+                -> The most common attribute directives are as follows:
+                        1.ngClass.-->
+
+
+<!-- <div class="text-center mt-2 border rounded gray-gradient shadow p-2" [ngClass]="{isValid : 'valid'}">
+    <h1>ngClass</h1>
+</div> -->
+
+
+<!--2.ngStyle.-->
+
+
+<!-- <div class="text-center mt-2 border rounded gray-gradient shadow p-2" [ngStyle]=" { 'color' : color, 'background-color' : background}">
+    <h1>ngStyle </h1>
+</div> -->
+
+
+
+<!-- 3.ngModle.-->
+
+<!--   3.Structural Directices.
+                -> directives that change the DOM layout by adding and removing DOM elements.
+                -> Structural directives are responsible for HTML layout. 
+                -> They shape or reshape the DOM's structure, typically by adding, removing, and manipulating the host elements to which they are attached.
+                -> There are three types of structural Directices
+                    1. ngIf.
+                    2. ngFor.
+                    3. ngSwitch.
+-->
+
+<!-- ngIf directive.-->
+
+<!-- <h1 *ngIf="color" class="text-light text-center">This is Ng IF</h1> -->
+
+<!-- ngFor directive -->
+
+<!-- <ul class="text-light mx-4">
+    <li *ngFor="let name of names">{{name}}</li>
+</ul> -->
+
+<!-- ngSwitch directive -->
+
+<!-- <div class="text-light text-center">
+    <select [(ngModel)]="selectedValue">  
+     <option *ngFor="let name of names;" [value]="name">{{name}}</option>  
+    </select>
+</div>
+
+<div class="mt-4" [ngSwitch]="selectedValue">
+
+    <h1 appCustom *ngSwitchCase="'sanju'">Full Name: SANJAY KUMAR H S</h1>
+    <h1 appCustom *ngSwitchCase="'satheesh'">Full Name: MAMBAKAM SATHEESH </h1>
+    <h1 appNewDir *ngSwitchCase="'abbas'">Full Name: ABBAS DUDEKULA</h1>
+    <h1 appCustom *ngSwitchCase="'dharini'">Full Name: DHARINI</h1>
+
+</div> -->
+
+
+<!-- custom Dierective 
+    -> custom directive is a user-defined directive that provides users to use desired functions to extend HTML functionality.
+    -> Command to generate directive using cli is :-- ng g d directiveName
+-->
+
+<!--  -->

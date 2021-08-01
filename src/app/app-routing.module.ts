@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ChildComponent } from './child/child.component';
 import { FoodRecipesComponent } from './food-recipes/food-recipes.component';
 import { FoodComponent } from './food/food.component';
 import { FormArrayComponent } from './form-array/form-array.component';
 import { LoginComponent } from './login/login.component';
 import { MockComponent } from './mock/mock.component';
+import { ParentComponent } from './parent/parent.component';
 import { RecipeAppComponent } from './recipe-app/recipe-app.component';
 import { SearchDropComponent } from './search-drop/search-drop.component';
 import { TableScrollComponent } from './table-scroll/table-scroll.component';
@@ -19,7 +21,9 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'recipe',component:RecipeAppComponent},
   {path:'food-recipe',component:FoodRecipesComponent},
-  {path:'food',component:FoodComponent}
+  {path:'food',component:FoodComponent},
+  {path:'child',component:ChildComponent},
+  {path:'parent',component:ParentComponent}
 ];
 
 @NgModule({
